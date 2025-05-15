@@ -1,11 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
 N, M = map(int, input().split())
 
+# Top half
 for i in range(N // 2):
     pattern = '.|.' * (2 * i + 1)
     print(pattern.center(M, '-'))
 
+# Center line
 print('WELCOME'.center(M, '-'))
 
+# Bottom half (mirror of top)
 for i in reversed(range(N // 2)):
     pattern = '.|.' * (2 * i + 1)
     print(pattern.center(M, '-'))
