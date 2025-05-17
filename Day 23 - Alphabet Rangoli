@@ -1,0 +1,18 @@
+def print_rangoli(size):
+    # your code goes here
+    import string
+    alpha = string.ascii_lowercase
+
+    lines = []
+    for i in range(size):
+        # Build the string for the i-th row (top to middle)
+        letters = alpha[size-1:i:-1] + alpha[i:size]
+        line = '-'.join(letters)
+        lines.append(line.center(4 * size - 3, '-'))
+
+    # Combine top-to-middle with reverse of top (excluding middle again)
+    full_pattern = lines[::-1] + lines[1:]
+    print('\n'.join(full_pattern))
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
