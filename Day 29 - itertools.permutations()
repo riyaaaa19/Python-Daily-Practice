@@ -1,0 +1,15 @@
+from itertools import permutations
+
+# Input: string and integer
+s, k = input().split()
+k = int(k)
+
+# Sort the string first to ensure lexicographic order
+sorted_s = sorted(s)
+
+# Generate permutations of size k
+perm_list = permutations(sorted_s, k)
+
+# Print each permutation
+for p in perm_list:
+    print(''.join(p))
