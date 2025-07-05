@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import cmath
+z = complex(input())
+r = abs(z)                  # Modulus
+phi = cmath.phase(z)        # Phase angle
+
+# Print results
+print(round(r, 3))
+print(round(phi, 3))
