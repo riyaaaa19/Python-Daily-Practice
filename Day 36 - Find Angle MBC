@@ -1,0 +1,33 @@
+import math
+
+# Input
+AB = int(input())
+BC = int(input())
+
+# Step 1: Use Pythagoras to find AC
+AC = math.sqrt(AB**2 + BC**2)
+
+# Step 2: Midpoint M of AC
+# Let A = (AB, 0)
+#     B = (0, 0)
+#     C = (0, BC)
+# Then AC connects (AB, 0) to (0, BC)
+
+mx = (AB + 0) / 2
+my = (0 + BC) / 2
+
+# Step 3: Vectors
+# Vector BM = (mx, my)
+# Vector BC = (0, BC)
+
+dot = mx * 0 + my * BC  # = my * BC
+mag_BM = math.sqrt(mx**2 + my**2)
+mag_BC = BC
+
+cos_theta = dot / (mag_BM * mag_BC)
+cos_theta = max(-1, min(1, cos_theta))
+
+theta_rad = math.acos(cos_theta)
+theta_deg = math.degrees(theta_rad)
+
+print(f"{round(theta_deg)}{chr(176)}")
